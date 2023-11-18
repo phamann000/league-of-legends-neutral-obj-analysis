@@ -1,4 +1,7 @@
-# league-of-legends-neutral-obj-analysis
+# League of Legends Neutral Objective Analysis, 2022 Data
 Analysis of 2022 Competitive League of Legend Matches concerning Neutral Objectives by Annie Pham.
-# H1 Introduction
-The following analysis has been done on data from 2022 Competitive League of Legends Matches which can be found at [oracleselixir-league-data](https://oracleselixir.com/tools/downloads).
+## Introduction
+The following analysis has been done on data from 2022 Competitive League of Legends Matches which can be found at [oracleselixir-league-data](https://oracleselixir.com/tools/downloads). Each game of League of Legends has 12 corresponding rows, 6 per team with 5 of those 6 corresponding to a player on a team and the sixth row corresponding to the team's overall stats for the game. There are 123 columns in the dataset and almost 150,000 rows.  
+The purpose of this analysis is to "find the relationship between teams claiming neutral objectives and their ability to win the game". The purpose of a game is to destroy the enemy team's base before they destroy yours, in the mean time however, there are a number of neutral objectives in the form of monsters that are available for either of the teams to take. These monsters include dragons, elder dragon, rift heralds, and barons, which not only provide gold to help strengthen members of the team, but also unique buffs.  
+Many players, both competitive and casual, associate the claiming of these neutral objectives with winning the game, but the purpose of this analysis is to explore just how fundamental these objectives are to winning the game.  
+With that being said, the columns relevant to this analysis are as follows: =='gameid'==, =='league'==, =='side'==, =='playerid'==, =='teamname'==, =='teamid'==, =='result'==, =='dragons'==, =='opp_dragons'==, =='elders'==, =='opp_elders'==, =='heralds'==, =='opp_heralds'==, =='barons'==, and =='opp_barons'==.
