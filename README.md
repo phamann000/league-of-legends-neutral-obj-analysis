@@ -13,18 +13,20 @@ With that being said, the columns relevant to this analysis are as follows: <mar
 - <mark>'teamname'</mark> Name of the team playing.
 - <mark>'teamid'</mark> Id of the team playing.
 - <mark>'result'</mark> True or False, depending on whether the team won (True) or lost (False).
-- <mark>'dragons'</mark> Number of dragons taken by the team.
-- <mark>'opp_dragons'</mark> Number of dragons taken by the opponent.
-- <mark>'elders'</mark> Number of elders taken by the team.
-- <mark>'opp_elders'</mark> Number of elders taken by the opponent.
-- <mark>'heralds'</mark> Number of heralds taken by the team.
-- <mark>'opp_heralds'</mark> Number of heralds taken by the opponent.
-- <mark>'barons'</mark> Number of barons taken by the team.
-- <mark>'opp_barons'</mark> Number of barons taken by the opponent.
-- <mark>'Total_Obj'</mark> Number of neutral objectives (dragons, elders, heralds, and barons) taken in the game total.
-- <mark>'percent_obj'</mark> Percent of neutral objectives taken by that team
-- <mark>'more_drags'</mark> True or False, depending on whether the team had more dragons (True) or not (False).
-- <mark>'more_heralds'</mark> True or False, depending on whether the team had more heralds (True) or not (False).
-- <mark>'more_elders'</mark> True or False, depending on whether the team had more elders (True) or not (False).
-- <mark>'more_barons'</mark> True or False, depending on whether the team had more barons (True) or not (False).  
-## Data Cleaning and Exploratory Data Analysis
+- <mark>'dragons'</mark>: Number of dragons taken by the team.
+- <mark>'opp_dragons'</mark>: Number of dragons taken by the opponent.
+- <mark>'elders'</mark>: Number of elders taken by the team.
+- <mark>'opp_elders'</mark>: Number of elders taken by the opponent.
+- <mark>'heralds'</mark>: Number of heralds taken by the team.
+- <mark>'opp_heralds'</mark>: Number of heralds taken by the opponent.
+- <mark>'barons'</mark>: Number of barons taken by the team.
+- <mark>'opp_barons'</mark>: Number of barons taken by the opponent.
+- <mark>'Total_Obj'</mark>: Number of neutral objectives (dragons, elders, heralds, and barons) taken in the game total.
+- <mark>'percent_obj'</mark>: Percent of neutral objectives taken by that team
+- <mark>'more_drags'</mark>: True or False, depending on whether the team had more dragons (True) or not (False).
+- <mark>'more_heralds'</mark>: True or False, depending on whether the team had more heralds (True) or not (False).
+- <mark>'more_elders'</mark>: True or False, depending on whether the team had more elders (True) or not (False).
+- <mark>'more_barons'</mark>: True or False, depending on whether the team had more barons (True) or not (False).  
+## Data Cleaning and Exploratory Data Analysis  
+In cleaning the data, I first used a column called 'datacompleteness' in order to only look at complete data as I thought they would be the more reliable form of data I could use. I also used 'playerid' in the way I mentioned above, locating where 'playerid' was missing to grab only the team summary data. This meant I had two rows per game, one for each team that took part in that game. The 'result' column was also converted to a boolean. To calculate the 'Total_Obj' column I grouped by 'gameid' and summed the 'dragons', 'elders', 'heralds', and 'barons' columns together. To calculate percent_obj, I summed the 'dragons', 'elders', 'heralds', and 'barons' columns together for each team and then divided by the 'Total_Obj' I calculated earlier. Finally, I used a boolean comparison to calculate whether each team had more dragons, elders, heralds, and barons the opposing team by comparing 'dragons' to 'opp_dragons', 'elders' to 'opp_elders', and so on and so forth for heralds and barons. The last step I took to clean the data was filling in the missing values in the 'teamnname' column to equal 'unknown team' as there were already values of 'unknown team' present in the dataframe, so I wanted to make sure the missing values were consistent within that column.  
+### Univariate Analysis
