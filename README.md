@@ -42,11 +42,11 @@ The last step I took to clean the data was filling in the missing values in the 
 | ESPORTSTMNT01_2690227 | LCKC     | Blue   | KT Rolster Challengers        | oe:team:b9733b8e8aa341319bbaf1035198a28 | True     |         4 |             1 |        0 |            0 |         1 |             1 |        1 |            0 |           8 |       75      | True         | False          | False         | True          |
 
 ### Univariate Analysis
-<iframe src="assets/neutral-objectives-per-game.html" width=800 height=600 frameBorder=0></iframe>  
+<iframe src="assets/neutral-objectives-per-game.html" width=800 height=500 frameBorder=0></iframe>  
 This histogram showcases the number of neutral objectives taken across all games contained within the dataframe. I would describe this histogram as being unimodal and with little to no skew, showing that most games have around 6-8 neutral objectives taken between both teams.
 
 ### Bivariate Analysis
-<iframe src="percentages-of-wins-more-drags.html" width=800 height=600 frameBorder=0></iframe>  
+<iframe src="assets/percentages-of-wins-more-drags.html" width=800 height=600 frameBorder=0></iframe>  
 This pie chart showcases the relationship between teams taking more dragons than their opponent, and whether or not they end up winning or losing the game. From the chart we see that almost 82% of wins occur when a team has more dragons than their opponent.  
 
 ### Interesting Aggregates  
@@ -110,4 +110,4 @@ Overall, columns with missing values seemed to be either MAR or Missing by Desig
 ### Missingness Dependency
 **Missigness of 'teamid' depends on 'league'** I wanted to determine whether the missingness of 'teamid' depended on league to see if the two columns were MAR or MCAR.  
 Here is a bar chart showing the percentages of when teamid was missing vs. wasn't missing per each league.  
-<iframe src="league-by-teamid-missingness.html" width=800 height=600 frameBorder=0></iframe>  
+<iframe src="assets/league-by-teamid-missingness.html" width=800 height=600 frameBorder=0></iframe>  
