@@ -109,5 +109,6 @@ Overall, columns with missing values seemed to be either MAR or Missing by Desig
 
 ### Missingness Dependency
 **Missigness of 'teamid' depends on 'league'** I wanted to determine whether the missingness of 'teamid' depended on league to see if the two columns were MAR or MCAR.  
-Here is a bar chart showing the percentages of when teamid was missing vs. wasn't missing per each league.  
+Here is a bar chart showing the percentages of when teamid was missing vs. wasn't missing per each league with dark pink composing the percent of values missing for that league, and the lighter pink composing of the percent values not missing for that league.
 <iframe src="assets/league-by-teamid-missingness.html" width=800 height=600 frameBorder=0></iframe>  
+Just by looking at this chart, we can tell that some leagues contribute to missing teamid values much more than other leagues. To find whether or not this was statistically significant or not, I calculated the observed tvd of the dataset and compared it to tvds from permutated data. In doing so, I found that the observed tvd did not fall within the range of the permutated tvd with a p-value of 0.0 and a significant level of 0.05, it is extremely unlikely that they come from the same population, which means that these two columns depend on each other.
