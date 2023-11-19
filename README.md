@@ -42,11 +42,11 @@ The last step I took to clean the data was filling in the missing values in the 
 | ESPORTSTMNT01_2690227 | LCKC     | Blue   | KT Rolster Challengers        | oe:team:b9733b8e8aa341319bbaf1035198a28 | True     |         4 |             1 |        0 |            0 |         1 |             1 |        1 |            0 |           8 |       75      | True         | False          | False         | True          |
 
 ### Univariate Analysis
-<iframe src="assets/neutral-objectives-per-game.html" width=800 height=500 frameBorder=0></iframe>  
+<iframe src="assets/neutral-objectives-per-game.html" width=800 height=400 frameBorder=0></iframe>  
 This histogram showcases the number of neutral objectives taken across all games contained within the dataframe. I would describe this histogram as being unimodal and with little to no skew, showing that most games have around 6-8 neutral objectives taken between both teams.
 
 ### Bivariate Analysis
-<iframe src="assets/percentages-of-wins-more-drags.html" width=800 height=600 frameBorder=0></iframe>  
+<iframe src="assets/percentages-of-wins-more-drags.html" width=800 height=400 frameBorder=0></iframe>  
 This pie chart showcases the relationship between teams taking more dragons than their opponent, and whether or not they end up winning or losing the game. From the chart we see that almost 82% of wins occur when a team has more dragons than their opponent.  
 
 ### Interesting Aggregates  
@@ -110,7 +110,7 @@ Overall, columns with missing values seemed to be either MAR or Missing by Desig
 ### Missingness Dependency
 **Missigness of 'teamid' depends on 'league'** I wanted to determine whether the missingness of 'teamid' depended on league to see if the two columns were MAR or MCAR.  
 Here is a bar chart showing the percentages of when teamid was missing vs. wasn't missing per each league with dark pink composing the percent of values missing for that league, and the lighter pink composing of the percent values not missing for that league.
-<iframe src="assets/league-by-teamid-missingness.html" width=800 height=600 frameBorder=0></iframe>  
+<iframe src="assets/league-by-teamid-missingness.html" width=800 height=400 frameBorder=0></iframe>  
 Just by looking at this chart, we can tell that some leagues contribute to missing teamid values much more than other leagues. To find whether or not this was statistically significant or not, I calculated the observed tvd of the dataset and compared it to tvds from permutated data. In doing so, I found that the observed tvd did not fall within the range of the permutated tvd with a p-value of 0.0 and a significant level of 0.05, it is extremely unlikely that they come from the same population, which means that these two columns depend on each other.  
 
 ## Hypothesis Testing  
@@ -120,4 +120,4 @@ Just by looking at this chart, we can tell that some leagues contribute to missi
 **Significance level:** 0.05, this is the most standard p-value when testing for significance.  
 **p-value:** With 10,000 tests run, I got a p-value of 0.0 with the test statistic (difference in group means) equalling ~38.61  
 **Conclusion:** When permutating the data, the differences ranged from -1.1 to +1.1 which is much lower than the observed difference of ~38.61. From this we can reject the null hypothesis that argues that the distributions are the same. This means we can argue that neutral objectives, specifically the percentage one team controls over the enemy team has a statistically significant correlation with winning.  
-<iframe src="assets/percent-neutral-obj-taken-by-win-loss.html" width=800 height=600 frameBorder=0></iframe>  
+<iframe src="assets/percent-neutral-obj-taken-by-win-loss.html" width=800 height=700 frameBorder=0></iframe>  
